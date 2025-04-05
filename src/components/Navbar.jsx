@@ -56,7 +56,7 @@ const Wrapper = styled.section`
     font-weight: 700;
   }
   .links {
-    padding: 10px;
+    padding: 10px 0;
     border-radius: 10rem;
     /* From https://css.glass */
     background: rgba(0, 0, 0, 0);
@@ -93,11 +93,11 @@ const Wrapper = styled.section`
     border: none;
     font-size: 1.1rem;
     color: var(--primaryClr);
-    padding: 5px 16px;
+    padding: 10px 26px;
     cursor: pointer;
     /* From https://css.glass */
     background: rgba(0, 0, 0, 0);
-    border-radius: 16px;
+    border-radius: 10rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.9px);
     -webkit-backdrop-filter: blur(5.9px);
@@ -115,7 +115,10 @@ const Wrapper = styled.section`
     border-radius: 10rem;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
+    .brand h1 {
+      font-size: 1.4rem;
+    }
     .links {
       position: absolute;
       bottom: 0;
@@ -131,13 +134,42 @@ const Wrapper = styled.section`
       padding: 6px 16px;
     }
     .link {
+      font-size: 1rem;
       margin: 0 !important;
     }
+
+    .search-btn {
+      background-color: var(--primaryClr);
+      color: var(--secClr);
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      position: relative;
+    }
+    .search-btn svg {
+      font-size: 1.3rem;
+      position: absolute;
+      top: 11%;
+      left: 13%;
+    }
+    .acc-btn button {
+      padding: 4px 8px;
+    }
+
     .navbar-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 40px;
     }
   }
 `;
