@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import LoginSys from './LoginSys';
+import { Link } from 'react-router';
 
 const LoginPageBanner = () => {
   return (
@@ -6,8 +8,8 @@ const LoginPageBanner = () => {
       <div className='banner-container'>
         <h1>Escape into Stories</h1>
         <p>Premium entertainment with a price tag of zero</p>
-        <div>
-          <button className='started-btn'>Get Started</button>
+        <div className='started-btn'>
+          <LoginSys />
         </div>
       </div>
     </Wrapper>
@@ -21,14 +23,20 @@ const Wrapper = styled.section`
     margin: 0 auto;
   }
 
-  .started-btn {
-    font-size: 1rem;
-    background: var(--secClr);
-    border: none;
-    border: 1px solid var(--secClr);
-    padding: 10px 20px;
-    border-radius: 10rem;
+  .started-btn button {
+    background: var(--secClr) !important;
+    border: var(--secClr) !important;
+    font-size: 1.1rem;
+    color: var(--primaryClr);
+    padding: 10px 26px;
     cursor: pointer;
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.9px);
+    -webkit-backdrop-filter: blur(5.9px);
+    border: 1px solid rgba(0, 0, 0, 0.21);
   }
 
   h1 {

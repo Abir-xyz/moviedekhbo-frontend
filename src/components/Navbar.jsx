@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
+import LoginSys from './LoginSys';
 
 const Navbar = () => {
   return (
@@ -36,7 +37,7 @@ const Navbar = () => {
             </div>
             <div className='acc-wrapper'>
               <div className='acc-btn'>
-                <button>Login</button>
+                <LoginSys />
               </div>
             </div>
           </div>
