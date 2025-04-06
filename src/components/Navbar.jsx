@@ -160,7 +160,7 @@ const Wrapper = styled.section`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 1rem;
+      padding: 1rem;
     }
   }
 
@@ -169,7 +169,7 @@ const Wrapper = styled.section`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 40px;
+      padding-top: 40px;
     }
   }
 `;
