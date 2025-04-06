@@ -8,11 +8,14 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #f8f9fa;
   font-family: 'Poppins', sans-serif !important;
 }
 
 :root {
+  /* --primaryClr: #000; */
   --primaryClr: #000;
   --secClr: #fff;
+  --altWhite: #ebebeb;
+  --txtClr: #ebebebcf;
 }

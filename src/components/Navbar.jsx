@@ -54,6 +54,7 @@ const Wrapper = styled.section`
   .brand h1 {
     font-size: 1.7rem;
     font-weight: 700;
+    color: var(--primaryClr);
   }
   .links {
     padding: 10px 0;
@@ -67,7 +68,7 @@ const Wrapper = styled.section`
   }
   .link {
     text-decoration: none;
-    color: #000;
+    color: #ebebebcf;
     font-size: 1.1rem;
     margin: 0 1rem;
   }
@@ -89,8 +90,8 @@ const Wrapper = styled.section`
     left: 13%;
   }
   .acc-btn button {
-    background: none;
-    border: none;
+    background: var(--secClr) !important;
+    border: var(--secClr) !important;
     font-size: 1.1rem;
     color: var(--primaryClr);
     padding: 10px 26px;
@@ -136,6 +137,10 @@ const Wrapper = styled.section`
     .link {
       font-size: 1rem;
       margin: 0 !important;
+      color: #000;
+    }
+    .active-link {
+      color: var(--txtClr) !important;
     }
 
     .search-btn {

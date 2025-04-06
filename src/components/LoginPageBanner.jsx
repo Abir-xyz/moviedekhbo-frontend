@@ -23,9 +23,9 @@ const Wrapper = styled.section`
 
   .started-btn {
     font-size: 1rem;
-    background: none;
+    background: var(--secClr);
     border: none;
-    border: 1px solid var(--primaryClr);
+    border: 1px solid var(--secClr);
     padding: 10px 20px;
     border-radius: 10rem;
     cursor: pointer;
@@ -34,10 +34,12 @@ const Wrapper = styled.section`
   h1 {
     font-size: 3rem;
     font-weight: 600;
+    color: var(--secClr);
   }
   p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    color: var(--altWhite);
   }
 
   @media screen and (max-width: 800px) {
