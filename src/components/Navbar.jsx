@@ -2,14 +2,17 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import LoginSys from './LoginSys';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
+  const { isAuthenticated, user } = useAuth0();
+
   return (
     <Wrapper className='section'>
       <div className='navbar-container'>
         <div className='wrapper'>
           <div className='brand'>
-            <h1>MovieDekhbo</h1>
+            {isAuthenticated ? <h1>For {user.name} </h1> : <h1>MovieDekhbo</h1>}
           </div>
         </div>
         <div className='wrapper'>
