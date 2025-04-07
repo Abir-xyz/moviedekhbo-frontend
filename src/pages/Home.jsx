@@ -1,4 +1,4 @@
-import { Navbar } from '../components/index';
+import { Navbar, TrendingMovies } from '../components/index';
 import styled from 'styled-components';
 
 const Home = () => {
@@ -6,7 +6,7 @@ const Home = () => {
     <Wrapper className='section'>
       <div className='banner-wrapper'>
         <Navbar />
-        <h3>home page</h3>
+        <TrendingMovies />
       </div>
     </Wrapper>
   );
