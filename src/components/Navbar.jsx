@@ -57,8 +57,8 @@ const Wrapper = styled.section`
   }
   .brand h1 {
     font-size: 1.7rem;
-    font-weight: 700;
-    color: var(--primaryClr);
+    font-weight: 600;
+    color: var(--headings);
   }
   .links {
     padding: 10px 0;
@@ -125,7 +125,8 @@ const Wrapper = styled.section`
       font-size: 1.4rem;
     }
     .links {
-      position: absolute;
+      position: fixed;
+      z-index: 10;
       bottom: 0;
       left: 0;
       right: 0;

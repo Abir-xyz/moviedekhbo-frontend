@@ -7,6 +7,9 @@ const Home = () => {
       <div className='banner-wrapper'>
         <Navbar />
         <TrendingMovies />
+        <TrendingMovies />
+        <TrendingMovies />
+        <TrendingMovies />
       </div>
     </Wrapper>
   );
