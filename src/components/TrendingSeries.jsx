@@ -99,7 +99,7 @@ const Wrapper = styled.section`
   }
   .heading h1 {
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-left: 2.4rem;
     color: var(--primaryClr);
   }
@@ -117,7 +117,7 @@ const Wrapper = styled.section`
   }
   .title {
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 400;
     max-width: 260px;
     text-align: center;
     color: var(--primaryClr);
