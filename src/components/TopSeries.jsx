@@ -37,7 +37,7 @@ const TopSeries = () => {
 
   return (
     <Wrapper className='section'>
-      <div className='trending-movie-container'>
+      <div className='trending-movie-container margin-wrapper'>
         <div className='heading'>
           <h1>Most Rated Series</h1>
         </div>
@@ -151,6 +151,12 @@ const Wrapper = styled.section`
     .rating {
       margin-bottom: 2px;
       margin-left: 2px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .margin-wrapper {
+      padding-bottom: 4rem !important;
     }
   }
 `;
