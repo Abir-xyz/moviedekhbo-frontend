@@ -3,6 +3,7 @@ import {
   TrendingMovies,
   TrendingSeries,
   TopMovies,
+  TopSeries,
 } from '../components/index';
 import styled from 'styled-components';
 
@@ -14,6 +15,7 @@ const Home = () => {
         <TrendingMovies />
         <TrendingSeries />
         <TopMovies />
+        <TopSeries />
       </div>
     </Wrapper>
   );

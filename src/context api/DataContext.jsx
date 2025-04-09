@@ -12,6 +12,7 @@ export const DataProvider = ({ children }) => {
   const [trendingMovies, setTrendingMovies] = useState('');
   const [trendingSeries, setTrendingSeries] = useState('');
   const [topMovies, setTopMovies] = useState('');
+  const [topSeries, setTopSeries] = useState('');
 
   // get trendingMovies
   const getTrendingMovies = async () => {
@@ -51,14 +52,27 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  // get top series
+  const getTopSeries = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios(`${rootURL}/tv/top_rated?api_key=${key}`);
+      const data = await response.data;
+      setTopSeries(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getTrendingMovies();
     getTrendingSeries();
     getTopMovies();
+    getTopSeries();
   }, []);
 
   return (
-    <DataContext.Provider value={{ trendingMovies, trendingSeries, topMovies }}>
+    <DataContext.Provider value={{ trendingMovies, trendingSeries, topMovies, topSeries }}>
       {children}
     </DataContext.Provider>
   );
