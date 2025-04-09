@@ -10,6 +10,7 @@ const key = import.meta.env.VITE_API_KEY;
 export const DataProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [trendingMovies, setTrendingMovies] = useState('');
+  const [trendingSeries, setTrendingSeries] = useState('');
 
   // get trendingMovies
   const getTrendingMovies = async () => {
@@ -25,12 +26,25 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  // get trendingSeries
+  const getTrendingSeries = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios(`${rootURL}/trending/tv/day?api_key=${key}`);
+      const data = await response.data;
+      setTrendingSeries(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getTrendingMovies();
+    getTrendingSeries();
   }, []);
 
   return (
-    <DataContext.Provider value={{ trendingMovies }}>
+    <DataContext.Provider value={{ trendingMovies, trendingSeries }}>
       {children}
     </DataContext.Provider>
   );

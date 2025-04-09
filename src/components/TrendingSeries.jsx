@@ -4,9 +4,13 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { RiStarSFill } from 'react-icons/ri';
 
-const TrendingMovies = () => {
-  const { trendingMovies } = useDataContext();
+const TrendingSeries = () => {
+  const { trendingMovies, trendingSeries } = useDataContext();
   const moviePosterURL = `https://image.tmdb.org/t/p/w500`;
+
+  {
+    trendingSeries && console.log(trendingSeries);
+  }
 
   const responsive = {
     superLargeDesktop: {
@@ -35,19 +39,19 @@ const TrendingMovies = () => {
     <Wrapper className='section'>
       <div className='trending-movie-container'>
         <div className='heading'>
-          <h1>Trending Movies</h1>
+          <h1>Trending Series</h1>
         </div>
         <div className='section-wrapper'>
-          {trendingMovies && (
+          {trendingSeries && (
             <Carousel
               responsive={responsive}
               autoPlay={true}
               autoPlaySpeed={2300}
               infinite={true}
             >
-              {trendingMovies &&
-                trendingMovies.results.map((movie) => {
-                  const { poster_path, title, release_date, vote_average } =
+              {trendingSeries &&
+                trendingSeries.results.map((movie) => {
+                  const { poster_path, name, first_air_date, vote_average } =
                     movie;
                   return (
                     <div className='movie-info-wrapper' key={movie.id}>
@@ -59,8 +63,8 @@ const TrendingMovies = () => {
                           />
                           <div className='flow-container'>
                             <p className='date'>
-                              {release_date
-                                ? new Date(movie.release_date)
+                              {first_air_date
+                                ? new Date(movie.first_air_date)
                                     .getFullYear()
                                     .toString()
                                 : 'N/A'}
@@ -76,7 +80,7 @@ const TrendingMovies = () => {
                           </div>
                         </div>
                         <div className='info-container'>
-                          <p className='title'>{title}</p>
+                          <p className='title'>{name}</p>
                         </div>
                       </div>
                     </div>
@@ -151,4 +155,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default TrendingMovies;
+export default TrendingSeries;
