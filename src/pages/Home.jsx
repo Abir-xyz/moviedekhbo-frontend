@@ -1,4 +1,9 @@
-import { Navbar, TrendingMovies, TrendingSeries } from '../components/index';
+import {
+  Navbar,
+  TrendingMovies,
+  TrendingSeries,
+  TopMovies,
+} from '../components/index';
 import styled from 'styled-components';
 
 const Home = () => {
@@ -8,6 +13,7 @@ const Home = () => {
         <Navbar />
         <TrendingMovies />
         <TrendingSeries />
+        <TopMovies />
       </div>
     </Wrapper>
   );
