@@ -33,7 +33,7 @@ const TrendingMovies = () => {
 
   return (
     <Wrapper className='section'>
-      <div className='trending-movie-container'>
+      <div className='trending-movie-container margin-top'>
         <div className='heading'>
           <h1>Trending Movies</h1>
         </div>
@@ -91,11 +91,13 @@ const TrendingMovies = () => {
 };
 
 const Wrapper = styled.section`
+  .margin-top {
+    margin-top: 4rem;
+  }
   .trending-movie-container {
     max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2rem !important;
   }
   .heading h1 {
     font-size: 1.6rem;
@@ -104,7 +106,7 @@ const Wrapper = styled.section`
     color: var(--primaryClr);
   }
   .heading {
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
     margin-bottom: 1rem;
   }
   .movie-info-wrapper {

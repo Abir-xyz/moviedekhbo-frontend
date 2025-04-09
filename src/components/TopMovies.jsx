@@ -99,7 +99,6 @@ const Wrapper = styled.section`
     max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2rem !important;
   }
   .heading h1 {
     font-size: 1.6rem;
@@ -108,7 +107,7 @@ const Wrapper = styled.section`
     color: var(--primaryClr);
   }
   .heading {
-    margin-top: 4rem;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
   .movie-info-wrapper {
