@@ -86,6 +86,20 @@ const Wrapper = styled.section`
   .year {
     color: #e98f53;
   }
+
+  @media screen and (max-width: 600px) {
+    .title {
+      font-size: 1.2rem !important;
+    }
+    .year,
+    .runtime,
+    .rating {
+      font-size: 1rem !important;
+    }
+    .desc {
+      font-size: 1.1rem !important;
+    }
+  }
 `;
 
 export default Details;
