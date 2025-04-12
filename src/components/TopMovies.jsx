@@ -3,6 +3,7 @@ import { useDataContext } from '../context api/DataContext';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { RiStarSFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const TopMovies = () => {
   const { topMovies } = useDataContext();
@@ -54,36 +55,38 @@ const TopMovies = () => {
                   const { poster_path, title, release_date, vote_average } =
                     movie;
                   return (
-                    <div className='movie-info-wrapper' key={movie.id}>
-                      <div className='wrapper'>
-                        <div className='img-container'>
-                          <img
-                            src={`${moviePosterURL}${poster_path}`}
-                            alt='movie-poster'
-                          />
-                          <div className='flow-container'>
-                            <p className='date'>
-                              {release_date
-                                ? new Date(movie.release_date)
-                                    .getFullYear()
-                                    .toString()
-                                : 'N/A'}
-                            </p>
-                            <p className='stars'>
-                              <span>
-                                <RiStarSFill />
-                              </span>
-                              <span className='rating'>
-                                {vote_average.toFixed(1)}
-                              </span>
-                            </p>
+                    <Link to='/description' className='link'>
+                      <div className='movie-info-wrapper' key={movie.id}>
+                        <div className='wrapper'>
+                          <div className='img-container'>
+                            <img
+                              src={`${moviePosterURL}${poster_path}`}
+                              alt='movie-poster'
+                            />
+                            <div className='flow-container'>
+                              <p className='date'>
+                                {release_date
+                                  ? new Date(movie.release_date)
+                                      .getFullYear()
+                                      .toString()
+                                  : 'N/A'}
+                              </p>
+                              <p className='stars'>
+                                <span>
+                                  <RiStarSFill />
+                                </span>
+                                <span className='rating'>
+                                  {vote_average.toFixed(1)}
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                          <div className='info-container'>
+                            <p className='title'>{title}</p>
                           </div>
                         </div>
-                        <div className='info-container'>
-                          <p className='title'>{title}</p>
-                        </div>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
             </Carousel>

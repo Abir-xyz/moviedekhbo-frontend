@@ -21,3 +21,7 @@ body {
   --altWhite: #ebebeb;
   --txtClr: #ebebebcf;
 }
+
+.link {
+  text-decoration: none !important;
+}
