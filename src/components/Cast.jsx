@@ -119,7 +119,14 @@ const Wrapper = styled.section`
     .container {
       max-width: 60vw;
       margin: 0 auto;
-      margin-top: 5rem !important;
+    }
+    .heading {
+      max-width: 60vw;
+      margin-top: 3rem !important;
+      margin: 3rem auto;
+    }
+    .heading h1 {
+      margin-left: 16px;
     }
   }
 `;
