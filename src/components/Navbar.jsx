@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import LoginSys from './LoginSys';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -11,9 +11,9 @@ const Navbar = () => {
     <Wrapper className='section'>
       <div className='navbar-container'>
         <div className='wrapper'>
-          <div className='brand'>
+          <Link to='/' className='brand'>
             {isAuthenticated ? <h1>For {user.name} </h1> : <h1>MovieDekhbo</h1>}
-          </div>
+          </Link>
         </div>
         <div className='wrapper'>
           <div className='links'>
@@ -58,6 +58,10 @@ const Wrapper = styled.section`
   .brand h1 {
     font-size: 1.7rem;
     font-weight: 600;
+    color: var(--headings);
+  }
+  .brand {
+    text-decoration: none;
     color: var(--headings);
   }
   .links {

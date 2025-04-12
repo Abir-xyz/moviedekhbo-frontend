@@ -64,6 +64,8 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  // get movie details
+
   useEffect(() => {
     getTrendingMovies();
     getTrendingSeries();
@@ -72,7 +74,14 @@ export const DataProvider = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ trendingMovies, trendingSeries, topMovies, topSeries }}>
+    <DataContext.Provider
+      value={{
+        trendingMovies,
+        trendingSeries,
+        topMovies,
+        topSeries,
+      }}
+    >
       {children}
     </DataContext.Provider>
   );

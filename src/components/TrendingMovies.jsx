@@ -48,11 +48,11 @@ const TrendingMovies = () => {
             >
               {trendingMovies &&
                 trendingMovies.results.map((movie) => {
-                  const { poster_path, title, release_date, vote_average } =
+                  const { poster_path, title, release_date, vote_average, id } =
                     movie;
                   return (
-                    <Link to='/description' className='link'>
-                      <div className='movie-info-wrapper' key={movie.id}>
+                    <Link to={`/description/${id}`} className='link'>
+                      <div className='movie-info-wrapper' key={id}>
                         <div className='wrapper'>
                           <div className='img-container'>
                             <img

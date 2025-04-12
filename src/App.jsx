@@ -15,7 +15,7 @@ const App = () => {
           }
         />
         <Route path='login' element={<Login />} />
-        <Route path='description' element={<Desc />} />
+        <Route path='description/:id' element={<Desc />} />
         <Route path='*' element={<Error />} />
       </Routes>
     </BrowserRouter>

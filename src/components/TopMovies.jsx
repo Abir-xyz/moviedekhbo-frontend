@@ -9,10 +9,6 @@ const TopMovies = () => {
   const { topMovies } = useDataContext();
   const moviePosterURL = `https://image.tmdb.org/t/p/w500`;
 
-  {
-    topMovies && console.log(topMovies);
-  }
-
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1500 },
