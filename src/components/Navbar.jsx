@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className='navbar-container'>
         <div className='wrapper'>
           <Link to='/' className='brand'>
-            {isAuthenticated ? <h1>For {user.name} </h1> : <h1>MovieDekhbo</h1>}
+            {isAuthenticated ? <h1>Hi, {user.name} </h1> : <h1>MovieDekhbo</h1>}
           </Link>
         </div>
         <div className='wrapper'>
@@ -60,6 +60,7 @@ const Wrapper = styled.section`
     font-weight: 600;
     color: var(--headings);
   }
+
   .brand {
     text-decoration: none;
     color: var(--headings);
@@ -126,7 +127,7 @@ const Wrapper = styled.section`
 
   @media screen and (max-width: 800px) {
     .brand h1 {
-      font-size: 1.4rem;
+      font-size: 1.66rem;
     }
     .links {
       position: fixed;

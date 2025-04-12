@@ -7,6 +7,8 @@ import TopMovies from './TopMovies';
 import TopSeries from './TopSeries';
 import VideoPlayer from './VideoPlayer';
 import Details from './Details';
+import Genre from './Genre';
+import Cast from './Cast';
 
 export {
   Navbar,
@@ -18,4 +20,6 @@ export {
   TopSeries,
   VideoPlayer,
   Details,
+  Genre,
+  Cast,
 };

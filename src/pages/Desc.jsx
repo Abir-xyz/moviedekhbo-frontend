@@ -1,7 +1,6 @@
 import { useParams } from 'react-router';
 import { styled } from 'styled-components';
-import { VideoPlayer, Navbar, Details } from '../components/index';
-import { useDataContext } from '../context api/DataContext';
+import { VideoPlayer, Navbar, Details, Genre, Cast } from '../components/index';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -12,6 +11,7 @@ const Desc = () => {
   const { id } = useParams();
   const [details, setDetails] = useState('');
 
+  // api fetching to get the description
   const getDetails = async () => {
     try {
       const response = await axios(`${rootURL}/movie/${id}?api_key=${key}`);
@@ -35,6 +35,12 @@ const Desc = () => {
         </div>
         <div className='details-wrapper'>
           <Details details={details} />
+        </div>
+        <div className='genre-wrapper'>
+          <Genre data={details} />
+        </div>
+        <div className='cast-wrapper'>
+          <Cast id={id} />
         </div>
       </main>
     </Wrapper>
