@@ -24,19 +24,19 @@ const Wrapper = styled.section`
   }
 
   .started-btn button {
-    background: var(--secClr) !important;
-    border: var(--secClr) !important;
+    background-color: #fff;
+    border: #fff !important;
     font-size: 1.1rem;
-    color: var(--primaryClr);
+    color: #000;
     padding: 10px 26px;
     cursor: pointer;
-    /* From https://css.glass */
-    background: rgba(0, 0, 0, 0);
     border-radius: 10rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.9px);
-    -webkit-backdrop-filter: blur(5.9px);
-    border: 1px solid rgba(0, 0, 0, 0.21);
+    transition: all 0.1s ease-in-out;
+  }
+
+  .started-btn button:hover {
+    background-color: #c0c0c0;
+    color: #fff;
   }
 
   h1 {

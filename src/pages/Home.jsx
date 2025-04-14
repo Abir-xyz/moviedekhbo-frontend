@@ -4,7 +4,6 @@ import {
   TrendingSeries,
   TopMovies,
   TopSeries,
-  Footer,
 } from '../components/index';
 import styled from 'styled-components';
 
@@ -22,12 +21,6 @@ const Home = () => {
   );
 };
 
-const Wrapper = styled.section`
-  .home {
-    background-image: url('/assets/gallery/cool2.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-`;
+const Wrapper = styled.section``;
 
 export default Home;

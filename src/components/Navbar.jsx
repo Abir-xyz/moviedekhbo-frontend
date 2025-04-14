@@ -104,9 +104,9 @@ const Wrapper = styled.section`
     border: 1px solid #ffff;
   }
   .search-btn:hover {
-    background: rgb(255, 177, 32) !important;
-    border-color: rgb(255, 177, 32) !important;
-    color: #ffffff !important;
+    background-color: #c0c0c0 !important;
+    border-color: #c0c0c0 !important;
+    color: #fff !important;
   }
   .search-btn svg {
     font-size: 1.8rem;
@@ -126,9 +126,9 @@ const Wrapper = styled.section`
   }
 
   .acc-btn button:hover {
-    background: rgb(255, 177, 32) !important;
-    border-color: rgb(255, 177, 32) !important;
-    color: #ffffff !important;
+    background-color: #c0c0c0 !important;
+    color: #fff !important;
+    border-color: #c0c0c0 !important;
   }
 
   .global-btns {

@@ -115,13 +115,22 @@ const Wrapper = styled.section`
   .movie-info-wrapper {
     display: flex;
     justify-content: center;
+    position: relative;
+  }
+  .info-container {
+    position: absolute;
+    bottom: 5%;
+    left: 13%;
   }
   .img-container img {
     height: 400px;
     border-radius: 5px;
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+    mask-image: linear-gradient(to bottom, black, transparent);
   }
+
   .title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     max-width: 260px;
     text-align: center;
@@ -130,7 +139,12 @@ const Wrapper = styled.section`
   .date,
   .stars {
     font-size: 1rem;
-    color: #fff;
+  }
+  .date {
+    background-color: #00000085;
+    border-radius: 10rem;
+    padding: 0px 3px;
+    color: #ffffff;
   }
   .img-container {
     position: relative;
@@ -138,7 +152,7 @@ const Wrapper = styled.section`
   }
   .flow-container {
     position: absolute;
-    bottom: 2%;
+    top: 1%;
     left: 0;
     display: flex;
     justify-content: space-between;
@@ -146,6 +160,10 @@ const Wrapper = styled.section`
     padding: 0 5px;
   }
   .stars {
+    color: #ffa600;
+    background-color: #03030375;
+    border-radius: 10rem;
+    padding: 0px 3px;
     display: flex;
     align-items: center;
     justify-content: center;

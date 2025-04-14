@@ -25,10 +25,12 @@ const Wrapper = styled.section`
   }
   .banner-wrapper {
     background-image: url('/assets/gallery/cool1.svg');
-    min-height: 100vh;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
   }
 `;
 

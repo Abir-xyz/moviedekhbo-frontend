@@ -17,9 +17,6 @@ const Footer = () => {
             If you want to say something then <Link to='/contact'>Contact</Link>
           </p>
           <p>Copyright © {currentYear} Moviedekhbo</p>
-          <p className='quote'>
-            "We die a little every day and call it living"
-          </p>
         </div>
       </div>
     </Wrapper>
@@ -30,19 +27,11 @@ const Wrapper = styled.section`
   .main {
     min-height: 20vh;
     margin-top: 4rem;
-    background-color: #1111113e;
+    background-color: #000000;
     color: #7a7a7a;
-    position: relative;
     padding: 12px 0;
   }
-  .quote {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    color: #5a5a5a;
-    font-style: italic;
-    padding-top: 5px;
-  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -59,9 +48,6 @@ const Wrapper = styled.section`
     .wrapper {
       margin-bottom: 65px;
       font-size: 0.9rem;
-      .quote {
-        top: 0;
-      }
     }
   }
 `;
