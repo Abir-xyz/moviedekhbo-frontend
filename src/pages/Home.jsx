@@ -4,13 +4,14 @@ import {
   TrendingSeries,
   TopMovies,
   TopSeries,
+  Footer,
 } from '../components/index';
 import styled from 'styled-components';
 
 const Home = () => {
   return (
     <Wrapper className='section'>
-      <div className='banner-wrapper'>
+      <div className='home'>
         <Navbar />
         <TrendingMovies />
         <TrendingSeries />
@@ -22,12 +23,10 @@ const Home = () => {
 };
 
 const Wrapper = styled.section`
-  .banner-wrapper {
+  .home {
     background-image: url('/assets/gallery/cool2.svg');
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 `;
 

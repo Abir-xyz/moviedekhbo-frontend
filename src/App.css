@@ -10,13 +10,14 @@
 }
 
 body {
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
+  background-color: #000;
   font-family: 'Poppins', sans-serif !important;
 }
 
 :root {
   /* --primaryClr: #000; */
-  --primaryClr: #000;
+  --primaryClr: #ebebeb;
   --secClr: #fff;
   --altWhite: #ebebeb;
   --txtClr: #ebebebcf;

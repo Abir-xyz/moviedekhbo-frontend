@@ -9,6 +9,7 @@ import {
   Episodes,
   Error,
 } from './pages/index';
+import { Footer } from './components';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/tv/:id/season/:number' element={<Episodes />} />
         <Route path='*' element={<Error />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

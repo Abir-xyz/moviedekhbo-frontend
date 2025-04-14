@@ -85,7 +85,7 @@ const Wrapper = styled.section`
   }
 
   .container {
-    padding-bottom: 10rem;
+    padding-bottom: 3rem;
   }
 
   .img {

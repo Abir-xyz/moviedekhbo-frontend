@@ -58,7 +58,7 @@ const Wrapper = styled.section`
   .brand h1 {
     font-size: 1.7rem;
     font-weight: 600;
-    color: var(--headings);
+    color: #fff;
   }
 
   .brand {
@@ -69,28 +69,43 @@ const Wrapper = styled.section`
     padding: 10px 0;
     border-radius: 10rem;
     /* From https://css.glass */
-    background: rgba(0, 0, 0, 0);
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.9px);
     -webkit-backdrop-filter: blur(5.9px);
-    border: 1px solid rgba(0, 0, 0, 0.21);
+    border: 1px solid rgba(39, 39, 39, 0.116);
   }
   .link {
     text-decoration: none;
-    color: #ebebebcf;
+    color: #ffffffce;
     font-size: 1.1rem;
     margin: 0 1rem;
+    transition: all 0.1s ease-in-out;
   }
+
+  .link:hover {
+    background-color: #222;
+    color: #fff;
+    padding: 6px 20px;
+    border-radius: 10rem;
+  }
+
   .search-wrapper {
     margin-right: 1rem;
   }
   .search-btn {
-    background-color: var(--primaryClr);
-    color: var(--secClr);
+    background-color: #fff !important;
+    color: #000 !important;
     height: 40px;
     width: 40px;
     border-radius: 50%;
     position: relative;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+  }
+  .search-btn:hover {
+    background: #000000 !important;
+    color: #fff !important;
   }
   .search-btn svg {
     font-size: 1.8rem;
@@ -99,10 +114,10 @@ const Wrapper = styled.section`
     left: 13%;
   }
   .acc-btn button {
-    background: var(--secClr) !important;
+    background: #fff !important;
     border: var(--secClr) !important;
     font-size: 1.1rem;
-    color: var(--primaryClr);
+    color: #000 !important ;
     padding: 10px 26px;
     cursor: pointer;
     /* From https://css.glass */
@@ -112,7 +127,14 @@ const Wrapper = styled.section`
     backdrop-filter: blur(5.9px);
     -webkit-backdrop-filter: blur(5.9px);
     border: 1px solid rgba(0, 0, 0, 0.21);
+    transition: all 0.1s ease-in-out;
   }
+
+  .acc-btn button:hover {
+    background: #000000 !important;
+    color: #fff !important;
+  }
+
   .global-btns {
     display: flex;
     align-items: center;
@@ -143,11 +165,17 @@ const Wrapper = styled.section`
       margin-left: auto;
       margin-right: auto;
       padding: 6px 16px;
+      /* From https://css.glass */
+      background: rgba(70, 70, 70, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5.9px);
+      -webkit-backdrop-filter: blur(5.9px);
+      border: 1px solid rgba(206, 206, 206, 0.21);
     }
     .link {
       font-size: 1rem;
       margin: 0 !important;
-      color: #000;
+      color: #ffffffce;
     }
     .active-link {
       color: var(--txtClr) !important;

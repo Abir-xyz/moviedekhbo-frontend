@@ -11,7 +11,7 @@ const Genre = ({ data }) => {
           {genres ? (
             genres.slice(0, 4).map((item) => {
               return (
-                <div className='item-wrapper'>
+                <div className='item-wrapper' key={item.id}>
                   <p>{item.name}</p>
                 </div>
               );

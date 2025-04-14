@@ -14,6 +14,7 @@ import VideoPlayerTv from './VideoPlayerTv';
 import Seasons from './Seasons';
 import EpList from './EpList';
 import VideoPlayerEp from './VideoPlayerEp';
+import Footer from './Footer';
 
 export {
   Navbar,
@@ -32,4 +33,5 @@ export {
   Seasons,
   EpList,
   VideoPlayerEp,
+  Footer,
 };
