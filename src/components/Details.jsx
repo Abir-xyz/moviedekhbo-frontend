@@ -8,7 +8,15 @@ function convertRuntime(runtimeInMinutes) {
 }
 
 const Details = ({ details }) => {
-  const { release_date, runtime, overview, vote_average } = details;
+  const {
+    release_date,
+    runtime,
+    overview,
+    vote_average,
+    first_air_date,
+    last_air_date,
+    number_of_seasons,
+  } = details;
 
   return (
     <Wrapper className='section'>
@@ -16,14 +24,21 @@ const Details = ({ details }) => {
         <div className='title-wrapper'>
           {details && (
             <div className='basic-info-wrapper'>
-              <p className='title'>{details.title}</p>
+              <p className='title'>{details.title || details.name}</p>
               <p className='sub-info'>
                 <span className='year'>
-                  {release_date
-                    ? new Date(release_date).getFullYear().toString()
-                    : 'N/A'}
+                  {release_date &&
+                    new Date(release_date).getFullYear().toString()}
+                  {first_air_date &&
+                    new Date(first_air_date).getFullYear().toString()}
+                  {last_air_date && '-'}
+                  {last_air_date &&
+                    new Date(last_air_date).getFullYear().toString()}
                 </span>
-                <span className='runtime'> {convertRuntime(runtime)}</span>
+                <span className='runtime'>
+                  {runtime ? convertRuntime(runtime) : ''}
+                  {number_of_seasons ? `Seasons: ${number_of_seasons}` : ''}
+                </span>
                 <span className='rating'>
                   <LiaStarSolid /> {vote_average.toFixed(1)}
                 </span>

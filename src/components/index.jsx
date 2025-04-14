@@ -9,6 +9,8 @@ import VideoPlayer from './VideoPlayer';
 import Details from './Details';
 import Genre from './Genre';
 import Cast from './Cast';
+import CastTv from './CastTv';
+import VideoPlayerTv from './VideoPlayerTv';
 
 export {
   Navbar,
@@ -22,4 +24,6 @@ export {
   Details,
   Genre,
   Cast,
+  CastTv,
+  VideoPlayerTv,
 };

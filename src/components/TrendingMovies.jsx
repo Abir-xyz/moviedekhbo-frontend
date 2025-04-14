@@ -51,7 +51,7 @@ const TrendingMovies = () => {
                   const { poster_path, title, release_date, vote_average, id } =
                     movie;
                   return (
-                    <Link to={`/description/${id}`} className='link'>
+                    <Link to={`/movie/${id}`} className='link'>
                       <div className='movie-info-wrapper' key={id}>
                         <div className='wrapper'>
                           <div className='img-container'>
