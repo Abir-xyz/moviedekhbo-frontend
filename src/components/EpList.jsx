@@ -8,7 +8,8 @@ const key = import.meta.env.VITE_API_KEY;
 
 const EpList = ({ id, number, setEpNum }) => {
   const [epData, setEpData] = useState('');
-  const [selectedEpisode, setSelectedEpisode] = useState(null);
+  const [title, setTitle] = useState('1');
+  const [episodeNo, setEpisodeNo] = useState('');
 
   const handleOnEpClick = (item) => {
     setEpNum(item);
@@ -33,6 +34,9 @@ const EpList = ({ id, number, setEpNum }) => {
 
   return (
     <Wrapper className='section'>
+      <div className='now-playing'>
+        <p>{`Episode ${episodeNo} : ${title}`}</p>
+      </div>
       <div className='ep-wrapper'>
         <div className='heading'>
           <p>Season {number} Episodes</p>
@@ -47,6 +51,8 @@ const EpList = ({ id, number, setEpNum }) => {
                       className='ep-name'
                       onClick={() => {
                         handleOnEpClick(item.episode_number);
+                        setTitle(item.name);
+                        setEpisodeNo(item.episode_number);
                       }}
                     >
                       <span className='icon'>
@@ -72,6 +78,17 @@ const Wrapper = styled.section`
     color: #ebebeb;
     margin: 0 16px;
     padding-bottom: 6rem !important;
+  }
+
+  .now-playing {
+    color: #ebebeb;
+    margin: 0 16px;
+    padding-top: 1rem;
+    text-transform: capitalize;
+  }
+
+  .now-playing p {
+    font-size: 1.5rem;
   }
 
   .heading {
@@ -109,6 +126,10 @@ const Wrapper = styled.section`
       max-width: 60vw;
       margin: 0 auto;
     }
+    .now-playing {
+      max-width: 60vw;
+      margin: 0 auto;
+    }
   }
   @media screen and (max-width: 800px) {
     .heading p {
@@ -116,6 +137,9 @@ const Wrapper = styled.section`
     }
     .ep-name {
       margin: 1rem 0;
+    }
+    .now-playing p {
+      font-size: 1.2rem;
     }
   }
 `;
