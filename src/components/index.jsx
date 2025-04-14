@@ -11,6 +11,9 @@ import Genre from './Genre';
 import Cast from './Cast';
 import CastTv from './CastTv';
 import VideoPlayerTv from './VideoPlayerTv';
+import Seasons from './Seasons';
+import EpList from './EpList';
+import VideoPlayerEp from './VideoPlayerEp';
 
 export {
   Navbar,
@@ -26,4 +29,7 @@ export {
   Cast,
   CastTv,
   VideoPlayerTv,
+  Seasons,
+  EpList,
+  VideoPlayerEp,
 };

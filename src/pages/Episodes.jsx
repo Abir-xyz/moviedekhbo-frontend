@@ -1,56 +1,25 @@
 import { useParams } from 'react-router';
 import { styled } from 'styled-components';
-import {
-  VideoPlayerTv,
-  Navbar,
-  Details,
-  Genre,
-  CastTv,
-  Seasons,
-} from '../components/index';
+import { VideoPlayerEp, Navbar, EpList } from '../components/index';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const rootURL = `https://api.themoviedb.org/3`;
 const key = import.meta.env.VITE_API_KEY;
 
-const DescTv = () => {
-  const { id } = useParams();
-  const [details, setDetails] = useState('');
-
-  // api fetching to get the description
-  const getDetails = async () => {
-    try {
-      const response = await axios(`${rootURL}/tv/${id}?api_key=${key}`);
-      const data = response.data;
-      setDetails(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getDetails();
-  }, []);
+const Episodes = () => {
+  const { id, number } = useParams();
+  const [epNum, setEpNum] = useState('');
 
   return (
     <Wrapper className='section'>
       <main className='main'>
         <Navbar />
         <div className='video-player-wrapper'>
-          <VideoPlayerTv id={id} />
+          <VideoPlayerEp id={id} number={number} episode={epNum} />
         </div>
-        <div className='details-wrapper'>
-          <Details details={details} />
-        </div>
-        <div className='genre-wrapper'>
-          <Genre data={details} />
-        </div>
-        <div className='seasons'>
-          <Seasons id={id} details={details} />
-        </div>
-        <div className='cast-wrapper'>
-          <CastTv id={id} />
+        <div className='episodes-wrapper'>
+          <EpList id={id} number={number} setEpNum={setEpNum} />
         </div>
       </main>
     </Wrapper>
@@ -102,4 +71,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default DescTv;
+export default Episodes;

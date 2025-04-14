@@ -52,7 +52,7 @@ const CastTv = ({ id }) => {
   return (
     <Wrapper className='section'>
       <div className='heading'>
-        <h1>Casts</h1>
+        <p>Casts</p>
       </div>
       {castData && (
         <div className='container'>
@@ -109,9 +109,9 @@ const Wrapper = styled.section`
     justify-content: center;
   }
 
-  .heading h1 {
+  .heading p {
     color: #ebebeb;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 400;
   }
 
@@ -127,6 +127,11 @@ const Wrapper = styled.section`
     }
     .heading h1 {
       margin-left: 16px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .heading p {
+      font-size: 1.2rem;
     }
   }
 `;
