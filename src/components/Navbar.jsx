@@ -68,7 +68,6 @@ const Wrapper = styled.section`
   .links {
     padding: 10px 0;
     border-radius: 10rem;
-    /* From https://css.glass */
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.9px);
@@ -94,18 +93,20 @@ const Wrapper = styled.section`
     margin-right: 1rem;
   }
   .search-btn {
-    background-color: #fff !important;
-    color: #000 !important;
+    color: #000000;
     height: 40px;
     width: 40px;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
+    background-color: #ffffff;
     transition: all 0.1s ease-in-out;
+    border: 1px solid #ffff;
   }
   .search-btn:hover {
-    background: #000000 !important;
-    color: #fff !important;
+    background: rgb(255, 177, 32) !important;
+    border-color: rgb(255, 177, 32) !important;
+    color: #ffffff !important;
   }
   .search-btn svg {
     font-size: 1.8rem;
@@ -114,25 +115,20 @@ const Wrapper = styled.section`
     left: 13%;
   }
   .acc-btn button {
-    background: #fff !important;
-    border: var(--secClr) !important;
     font-size: 1.1rem;
-    color: #000 !important ;
+    color: #000000 !important ;
     padding: 10px 26px;
     cursor: pointer;
-    /* From https://css.glass */
-    background: rgba(0, 0, 0, 0);
     border-radius: 10rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.9px);
-    -webkit-backdrop-filter: blur(5.9px);
-    border: 1px solid rgba(0, 0, 0, 0.21);
+    border: 1px solid #fff;
+    background-color: #fff;
     transition: all 0.1s ease-in-out;
   }
 
   .acc-btn button:hover {
-    background: #000000 !important;
-    color: #fff !important;
+    background: rgb(255, 177, 32) !important;
+    border-color: rgb(255, 177, 32) !important;
+    color: #ffffff !important;
   }
 
   .global-btns {
@@ -183,7 +179,7 @@ const Wrapper = styled.section`
 
     .search-btn {
       background-color: var(--primaryClr);
-      color: var(--secClr);
+      color: #000 !important;
       height: 30px;
       width: 30px;
       border-radius: 50%;

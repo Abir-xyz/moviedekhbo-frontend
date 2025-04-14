@@ -5,5 +5,6 @@ import Desc from './Desc';
 import DescTv from './DescTv';
 import Error from './Error';
 import Episodes from './Episodes';
+import Contact from './Contact';
 
-export { Login, Home, PrivateRoute, Desc, DescTv, Episodes, Error };
+export { Login, Home, PrivateRoute, Desc, DescTv, Episodes, Contact, Error };
