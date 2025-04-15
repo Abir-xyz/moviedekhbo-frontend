@@ -64,13 +64,13 @@ const Navbar = () => {
               </span>
               <span>Home</span>
             </NavLink>
-            <NavLink to='/movies' className='link'>
+            <NavLink to='/allmovies' className='link'>
               <span className='icon'>
                 <MdMovie />
               </span>
               <span>Movies</span>
             </NavLink>
-            <NavLink to='/tv' className='link'>
+            <NavLink to='/allseries' className='link'>
               <span className='icon'>
                 <MdOutlineLiveTv />
               </span>

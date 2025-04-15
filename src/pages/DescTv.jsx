@@ -60,7 +60,7 @@ const DescTv = () => {
 const Wrapper = styled.section`
   .main {
     min-height: 100vh;
-    background-color: #000 !important;
+    background-color: #001523;
   }
   .video-player-wrapper {
     margin-top: 40px !important;
