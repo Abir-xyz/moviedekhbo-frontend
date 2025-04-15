@@ -81,9 +81,9 @@ const TrendingSeries = () => {
                                 </span>
                               </p>
                             </div>
-                          </div>
-                          <div className='info-container'>
-                            <p className='title'>{name}</p>
+                            <div className='info-container'>
+                              <p className='title'>{name}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -117,18 +117,19 @@ const Wrapper = styled.section`
   .movie-info-wrapper {
     display: flex;
     justify-content: center;
-    position: relative;
   }
-  .info-container {
-    position: absolute;
-    bottom: 5%;
-    left: 13%;
-  }
+
   .img-container img {
+    position: relative;
     height: 400px;
     border-radius: 5px;
     -webkit-mask-image: linear-gradient(to bottom, black, transparent);
     mask-image: linear-gradient(to bottom, black, transparent);
+  }
+  .info-container {
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
   }
   .title {
     font-size: 1rem;
