@@ -32,12 +32,14 @@ const Contact = () => {
             <input
               type='text'
               placeholder='Name'
+              name='Name'
               required
               className='form-control'
             />
             <input
               type='email'
               placeholder='Email'
+              name='Email'
               required
               className='form-control'
             />

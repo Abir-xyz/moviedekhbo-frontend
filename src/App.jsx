@@ -16,14 +16,15 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
+        {/* <Route
           path='/'
           element={
             <PrivateRoute>
               <Home />
             </PrivateRoute>
           }
-        />
+        /> */}
+        <Route path='/' element={<Home />} />
         <Route path='login' element={<Login />} />
         <Route path='movie/:id' element={<Desc />} />
         <Route path='/tv/:id' element={<DescTv />} />
