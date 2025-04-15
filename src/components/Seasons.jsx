@@ -118,6 +118,9 @@ const Wrapper = styled.section`
     .heading p {
       font-size: 1.2rem;
     }
+    .wrapper {
+      margin: 0 1rem;
+    }
   }
 `;
 

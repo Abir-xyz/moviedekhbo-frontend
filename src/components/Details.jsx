@@ -123,6 +123,17 @@ const Wrapper = styled.section`
     }
   }
 
+  @media screen and (max-width: 800px) {
+    .basic-info-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .sub-info {
+      margin-top: 6px;
+    }
+  }
+
   @media screen and (min-width: 800px) {
     .container {
       max-width: 60vw;

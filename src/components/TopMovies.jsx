@@ -3,6 +3,7 @@ import { useDataContext } from '../context api/DataContext';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { RiStarSFill } from 'react-icons/ri';
+import { LiaStarSolid } from 'react-icons/lia';
 import { Link } from 'react-router-dom';
 
 const TopMovies = () => {
@@ -36,7 +37,10 @@ const TopMovies = () => {
     <Wrapper className='section'>
       <div className='trending-movie-container'>
         <div className='heading'>
-          <h1>Most Rated Movies</h1>
+          <span className='icon'>
+            <LiaStarSolid />
+          </span>
+          <span className='name'>Most Rated Movies</span>
         </div>
         <div className='section-wrapper'>
           {topMovies && (
@@ -99,11 +103,18 @@ const Wrapper = styled.section`
     margin-left: auto;
     margin-right: auto;
   }
-  .heading h1 {
-    font-size: 1.6rem;
-    font-weight: 500;
+  .heading {
+    display: flex;
+  }
+  .heading .icon {
+    font-size: 1.7rem;
     margin-left: 2.4rem;
+    margin-right: 6px;
+    color: var(--accentClr);
+  }
+  .heading .name {
     color: var(--primaryClr);
+    font-size: 1.3rem;
   }
   .heading {
     margin-top: 1.5rem;
@@ -114,13 +125,25 @@ const Wrapper = styled.section`
     justify-content: center;
   }
 
+  .wrapper {
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  .wrapper:hover img {
+    scale: 1.1;
+  }
+
   .img-container img {
+    display: block;
     height: 400px;
     border-radius: 5px;
     /* opacity: 0.8; */
     -webkit-mask-image: linear-gradient(to bottom, black, transparent);
     mask-image: linear-gradient(to bottom, black, transparent);
     position: relative;
+    transition: all 0.3s ease-in-out;
   }
   .info-container {
     position: absolute;

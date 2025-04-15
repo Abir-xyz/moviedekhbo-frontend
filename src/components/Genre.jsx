@@ -75,6 +75,14 @@ const Wrapper = styled.section`
       margin-top: 1rem;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 7px;
+    }
+  }
 `;
 
 export default Genre;

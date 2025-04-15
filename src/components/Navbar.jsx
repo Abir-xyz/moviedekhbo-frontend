@@ -58,7 +58,7 @@ const Navbar = () => {
               animate ? 'animate-slide' : ''
             }`}
           >
-            <NavLink to='/' className='link active'>
+            <NavLink to='/' className='link'>
               <span className='icon'>
                 <CiHome />
               </span>
@@ -124,8 +124,10 @@ const Wrapper = styled.section`
   }
   .brand h1 {
     font-size: 1.7rem;
-    font-weight: 600;
     color: #fff;
+    font-family: 'Lobster', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
   }
 
   .brand {

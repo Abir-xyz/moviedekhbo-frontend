@@ -3,6 +3,7 @@ import { useDataContext } from '../context api/DataContext';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { RiStarSFill } from 'react-icons/ri';
+import { IoIosTrendingUp } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 const TrendingSeries = () => {
@@ -36,7 +37,10 @@ const TrendingSeries = () => {
     <Wrapper className='section'>
       <div className='trending-movie-container'>
         <div className='heading'>
-          <h1>Trending Series</h1>
+          <span className='icon'>
+            <IoIosTrendingUp />
+          </span>
+          <span className='name'>Trending Series</span>
         </div>
         <div className='section-wrapper'>
           {trendingSeries && (
@@ -104,11 +108,18 @@ const Wrapper = styled.section`
     margin-left: auto;
     margin-right: auto;
   }
-  .heading h1 {
-    font-size: 1.6rem;
-    font-weight: 500;
+  .heading {
+    display: flex;
+  }
+  .heading .icon {
+    font-size: 1.7rem;
     margin-left: 2.4rem;
+    margin-right: 6px;
+    color: var(--accentClr);
+  }
+  .heading .name {
     color: var(--primaryClr);
+    font-size: 1.3rem;
   }
   .heading {
     margin-top: 1.5rem;
@@ -119,11 +130,23 @@ const Wrapper = styled.section`
     justify-content: center;
   }
 
+  .wrapper {
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  .wrapper:hover img {
+    scale: 1.1;
+  }
+
   .img-container img {
+    display: block;
     position: relative;
     height: 400px;
     border-radius: 5px;
     -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+    transition: all 0.3s ease-in-out;
     mask-image: linear-gradient(to bottom, black, transparent);
   }
   .info-container {

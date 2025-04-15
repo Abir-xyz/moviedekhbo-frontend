@@ -16,7 +16,7 @@ const Footer = () => {
           <p>
             If you want to say something then <Link to='/contact'>Contact</Link>
           </p>
-          <p>Copyright © {currentYear} Moviedekhbo</p>
+          <p>Copyright © {currentYear} MovieDekhbo</p>
         </div>
       </div>
     </Wrapper>
@@ -46,7 +46,7 @@ const Wrapper = styled.section`
 
   @media screen and (max-width: 800px) {
     .wrapper {
-      margin-bottom: 65px;
+      margin-bottom: 5px;
       font-size: 0.9rem;
     }
   }
