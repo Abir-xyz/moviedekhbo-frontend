@@ -122,6 +122,9 @@ const Wrapper = styled.section`
     .heading p {
       font-size: 1.2rem;
     }
+    .main-wrapper div ul li {
+      padding: 0 12px !important;
+    }
   }
 `;
 
