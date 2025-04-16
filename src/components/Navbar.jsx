@@ -9,6 +9,7 @@ import { FaBarsStaggered } from 'react-icons/fa6';
 import LoginSys from './LoginSys';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
+import 'animate.css';
 
 const Navbar = () => {
   const { isAuthenticated, user } = useAuth0();
@@ -49,7 +50,15 @@ const Navbar = () => {
       <div className='navbar-container'>
         <div className='wrapper'>
           <Link to='/' className='brand'>
-            {isAuthenticated ? <h1>Hi, {user.name} </h1> : <h1>MovieDekhbo</h1>}
+            {isAuthenticated ? (
+              <h1 className='animate__animated animate__bounceIn'>
+                Hi, {user.name}{' '}
+              </h1>
+            ) : (
+              <h1 className='animate__animated animate__bounceIn'>
+                MovieDekhbo
+              </h1>
+            )}
           </Link>
         </div>
         <div className='wrapper link-wrapper'>
