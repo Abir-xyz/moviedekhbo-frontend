@@ -38,7 +38,7 @@ const DescTv = () => {
       <main className='main'>
         <Navbar />
         <div className='video-player-wrapper'>
-          {/* <VideoPlayerTv id={id} /> */}
+          <VideoPlayerTv id={id} />
         </div>
         <div className='details-wrapper'>
           <Details details={details} />
