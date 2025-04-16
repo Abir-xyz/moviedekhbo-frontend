@@ -105,9 +105,9 @@ const Wrapper = styled.section`
     justify-content: center;
   }
 
-  .main-wrapper div ul li {
+  /* .main-wrapper div ul li {
     padding: 0 12px !important;
-  }
+  } */
 
   @media screen and (min-width: 800px) {
     .container {
@@ -122,8 +122,9 @@ const Wrapper = styled.section`
     .heading p {
       font-size: 1.2rem;
     }
-    .main-wrapper div ul li {
-      padding: 0 12px !important;
+    .react-multi-carousel-track {
+      display: flex !important;
+      gap: 15px !important;
     }
   }
 `;
