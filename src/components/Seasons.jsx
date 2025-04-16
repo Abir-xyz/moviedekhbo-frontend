@@ -105,6 +105,10 @@ const Wrapper = styled.section`
     justify-content: center;
   }
 
+  .main-wrapper div ul li {
+    padding: 0 12px !important;
+  }
+
   @media screen and (min-width: 800px) {
     .container {
       max-width: 60vw;
@@ -117,9 +121,6 @@ const Wrapper = styled.section`
   @media screen and (max-width: 600px) {
     .heading p {
       font-size: 1.2rem;
-    }
-    .wrapper {
-      margin: 0 1rem;
     }
   }
 `;
