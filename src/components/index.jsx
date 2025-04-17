@@ -15,6 +15,8 @@ import Seasons from './Seasons';
 import EpList from './EpList';
 import VideoPlayerEp from './VideoPlayerEp';
 import Footer from './Footer';
+import SearchForm from './SearchForm';
+import SearchedResults from './SearchedResults';
 
 export {
   Navbar,
@@ -34,4 +36,6 @@ export {
   EpList,
   VideoPlayerEp,
   Footer,
+  SearchForm,
+  SearchedResults,
 };

@@ -95,14 +95,14 @@ const Navbar = () => {
         </div>
         <div className='wrapper'>
           <div className='global-btns'>
-            <div className='search-wrapper'>
+            <Link to='/search' className='search-wrapper'>
               <div className='search-btn'>
                 <span className='icon'>
                   <CiSearch />
                 </span>
                 Search
               </div>
-            </div>
+            </Link>
             <div className='nav-bars' onClick={handleShowLinks}>
               <span>
                 <FaBarsStaggered />
@@ -154,6 +154,9 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .search-wrapper {
+    text-decoration: none !important;
   }
   .link {
     text-decoration: none;

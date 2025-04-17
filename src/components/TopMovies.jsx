@@ -55,8 +55,8 @@ const TopMovies = () => {
                   const { poster_path, title, release_date, vote_average, id } =
                     movie;
                   return (
-                    <Link to={`/movie/${id}`} className='link'>
-                      <div className='movie-info-wrapper' key={movie.id}>
+                    <Link to={`/movie/${id}`} className='link' key={movie.id}>
+                      <div className='movie-info-wrapper'>
                         <div className='wrapper'>
                           <div className='img-container'>
                             <img

@@ -60,8 +60,8 @@ const TrendingSeries = () => {
                     id,
                   } = movie;
                   return (
-                    <Link to={`/tv/${id}`} className='link'>
-                      <div className='movie-info-wrapper' key={movie.id}>
+                    <Link to={`/tv/${id}`} className='link' key={movie.id}>
+                      <div className='movie-info-wrapper'>
                         <div className='wrapper'>
                           <div className='img-container'>
                             <img

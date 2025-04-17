@@ -13,6 +13,7 @@ export const DataProvider = ({ children }) => {
   const [trendingSeries, setTrendingSeries] = useState('');
   const [topMovies, setTopMovies] = useState('');
   const [topSeries, setTopSeries] = useState('');
+  const [results, setResults] = useState('');
 
   // get trendingMovies
   const getTrendingMovies = async () => {
@@ -64,7 +65,19 @@ export const DataProvider = ({ children }) => {
     }
   };
 
-  // get movie details
+  // get results
+  const getSearchedValue = async (value) => {
+    try {
+      const response = await axios(
+        `${rootURL}/search/multi?api_key=${key}&query=${value}`
+      );
+      const data = response.data;
+      // console.log(data);
+      setResults(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     getTrendingMovies();
@@ -80,6 +93,8 @@ export const DataProvider = ({ children }) => {
         trendingSeries,
         topMovies,
         topSeries,
+        getSearchedValue,
+        results,
       }}
     >
       {children}
