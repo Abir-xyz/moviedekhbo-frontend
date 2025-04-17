@@ -255,7 +255,7 @@ const Wrapper = styled.section`
         margin-top: 3px;
       }
     }
-    .active-link {
+    .active {
       padding: 2px 8px;
     }
     .link:hover {
@@ -301,7 +301,7 @@ const Wrapper = styled.section`
       margin: 0 !important;
       color: #ffffffce;
     }
-    .active-link {
+    .active {
       color: var(--txtClr) !important;
     }
 

@@ -63,8 +63,12 @@ const Wrapper = styled.section`
 
   .links .link {
     color: #ebebeb;
+    padding: 6px 0px;
   }
-  .active-link {
+  .links .link:hover{
+    padding: 6px 12px;
+  }
+  .active {
     background-color: #ebebeb;
     color: #000 !important;
   }
