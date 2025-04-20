@@ -14,6 +14,7 @@ export const DataProvider = ({ children }) => {
   const [topMovies, setTopMovies] = useState('');
   const [topSeries, setTopSeries] = useState('');
   const [results, setResults] = useState('');
+  const [hasSearched, setHasSearched] = useState(false);
 
   // get trendingMovies
   const getTrendingMovies = async () => {
@@ -72,8 +73,8 @@ export const DataProvider = ({ children }) => {
         `${rootURL}/search/multi?api_key=${key}&query=${value}`
       );
       const data = response.data;
-      // console.log(data);
       setResults(data);
+      setHasSearched(true);
     } catch (error) {
       console.log(error);
     }
@@ -95,6 +96,8 @@ export const DataProvider = ({ children }) => {
         topSeries,
         getSearchedValue,
         results,
+        hasSearched,
+        setHasSearched,
       }}
     >
       {children}

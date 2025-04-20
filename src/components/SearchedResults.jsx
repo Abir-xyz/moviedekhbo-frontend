@@ -2,14 +2,19 @@ import styled from 'styled-components';
 import { useDataContext } from '../context api/DataContext';
 import { Link } from 'react-router';
 import { RiStarSFill } from 'react-icons/ri';
+import { useEffect } from 'react';
 
 const SearchedResults = () => {
-  const { results } = useDataContext();
+  const { results, hasSearched, setHasSearched } = useDataContext();
   const moviePosterURL = `https://image.tmdb.org/t/p/w500`;
 
   {
     results && console.log(results.results);
   }
+
+  useEffect(() => {
+    setHasSearched(false);
+  }, []);
 
   return (
     <Wrapper className='section'>
@@ -64,6 +69,9 @@ const SearchedResults = () => {
                 </Link>
               );
             })}
+          {hasSearched && results?.results?.length === 0 && (
+            <div className='not-found'>Not found</div>
+          )}
         </div>
       </div>
     </Wrapper>
@@ -86,6 +94,16 @@ const Wrapper = styled.section`
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
+  }
+
+  .not-found {
+    text-align: center;
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+  .main .not-found {
+    min-height: 50vh !important;
   }
 
   .wrapper {
