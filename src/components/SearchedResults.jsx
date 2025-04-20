@@ -49,7 +49,9 @@ const SearchedResults = () => {
                               <RiStarSFill />
                             </span>
                             <span className='rating'>
-                              {vote_average.toFixed(1)}
+                              {typeof vote_average === 'number'
+                                ? vote_average.toFixed(1)
+                                : 'N/A'}
                             </span>
                           </p>
                         </div>
