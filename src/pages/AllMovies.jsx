@@ -1,35 +1,43 @@
 import styled from 'styled-components';
+import { Navbar } from '../components';
 import { useDataContext } from '../context api/DataContext';
-import { Link } from 'react-router';
+import { useEffect, useState } from 'react';
 import { RiStarSFill } from 'react-icons/ri';
-import { useEffect } from 'react';
+import { Link } from 'react-router';
+import { GrFormPreviousLink } from 'react-icons/gr';
+import { GrFormNextLink } from 'react-icons/gr';
 
-const SearchedResults = () => {
-  const { results, hasSearched, setHasSearched } = useDataContext();
+const AllMovies = () => {
+  const { getAllMovies, allMovies, totalPages, isLoading } = useDataContext();
+  const [page, setPage] = useState(1);
+
   const moviePosterURL = `https://image.tmdb.org/t/p/w500`;
 
+  const nextPage = () => {
+    if (page < totalPages) setPage((prev) => prev + 1);
+  };
+
+  const prevPage = () => {
+    if (page > 1) setPage((prev) => prev - 1);
+  };
+
   useEffect(() => {
-    setHasSearched(false);
-  }, []);
+    getAllMovies(page);
+  }, [page]);
 
   return (
     <Wrapper className='section'>
-      <div className='result-container'>
-        <div className='main'>
-          {results &&
-            results.results.map((movie) => {
-              const {
-                poster_path,
-                name,
-                title,
-                first_air_date,
-                vote_average,
-                id,
-                release_date,
-                media_type,
-              } = movie;
+      <main className='main'>
+        <div className='navbar-container'>
+          <Navbar />
+        </div>
+        <div className='content-container'>
+          {allMovies &&
+            allMovies.map((movie) => {
+              const { poster_path, title, release_date, vote_average, id } =
+                movie;
               return (
-                <Link to={`/${media_type}/${id}`} className='link' key={id}>
+                <Link to={`/movie/${id}`} className='link' key={id}>
                   <div className='movie-info-wrapper'>
                     <div className='wrapper'>
                       <div className='img-container'>
@@ -39,25 +47,23 @@ const SearchedResults = () => {
                         />
                         <div className='flow-container'>
                           <p className='date'>
-                            {first_air_date
-                              ? new Date(movie.first_air_date)
+                            {release_date
+                              ? new Date(movie.release_date)
                                   .getFullYear()
                                   .toString()
-                              : new Date(release_date).getFullYear().toString()}
+                              : 'N/A'}
                           </p>
                           <p className='stars'>
                             <span>
                               <RiStarSFill />
                             </span>
                             <span className='rating'>
-                              {typeof vote_average === 'number'
-                                ? vote_average.toFixed(1)
-                                : 'N/A'}
+                              {vote_average.toFixed(1)}
                             </span>
                           </p>
                         </div>
                         <div className='info-container'>
-                          <p className='title'>{name ? name : title}</p>
+                          <p className='title'>{title}</p>
                         </div>
                       </div>
                     </div>
@@ -65,41 +71,50 @@ const SearchedResults = () => {
                 </Link>
               );
             })}
-          {hasSearched && results?.results?.length === 0 && (
-            <div className='not-found'>Not found</div>
-          )}
         </div>
-      </div>
+        <div className='page-info'>
+          <p>
+            page {page} of {totalPages}
+          </p>
+        </div>
+        <div className='btn-container'>
+          <button className='btn' onClick={prevPage} disabled={page === 1}>
+            <GrFormPreviousLink />
+          </button>
+          <button
+            className='btn'
+            onClick={nextPage}
+            disabled={page === totalPages}
+          >
+            <GrFormNextLink />
+          </button>
+        </div>
+      </main>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  .result-container {
-    color: #ebebeb;
+  .main {
+    min-height: 100vh;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  .content-container {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link {
+    margin: 0 1rem;
   }
 
   .movie-info-wrapper {
     display: flex;
     justify-content: center;
-  }
-
-  .main {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-  }
-
-  .not-found {
-    text-align: center;
-    width: 100%;
-    font-size: 1.3rem;
-  }
-
-  .main .not-found {
-    min-height: 50vh !important;
   }
 
   .wrapper {
@@ -114,15 +129,14 @@ const Wrapper = styled.section`
 
   .img-container img {
     display: block;
+    position: relative;
     height: 400px;
-    width: 100%;
     border-radius: 5px;
-    /* opacity: 0.8; */
     -webkit-mask-image: linear-gradient(to bottom, black, transparent);
     mask-image: linear-gradient(to bottom, black, transparent);
-    position: relative;
     transition: all 0.3s ease-in-out;
   }
+
   .info-container {
     position: absolute;
     bottom: 5%;
@@ -173,12 +187,23 @@ const Wrapper = styled.section`
     }
   }
 
-  @media screen and (max-width: 800px) {
-    .main {
-      align-items: center;
-      justify-content: center;
+  .page-info {
+    color: #818181;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 2rem 0;
+  }
+
+  .btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    .btn {
+      cursor: pointer;
+      font-size: 1.5rem;
     }
   }
 `;
 
-export default SearchedResults;
+export default AllMovies;

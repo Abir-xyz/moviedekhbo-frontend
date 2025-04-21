@@ -15,6 +15,8 @@ export const DataProvider = ({ children }) => {
   const [topSeries, setTopSeries] = useState('');
   const [results, setResults] = useState('');
   const [hasSearched, setHasSearched] = useState(false);
+  const [allMovies, setAllMovies] = useState('');
+  const [totalPages, setTotalPages] = useState(null);
 
   // get trendingMovies
   const getTrendingMovies = async () => {
@@ -80,6 +82,24 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  // get all movies
+  const getAllMovies = async (pageNum) => {
+    setIsLoading(true);
+    try {
+      const response = await axios(`${rootURL}/movie/now_playing`, {
+        params: {
+          api_key: `${key}`,
+          page: pageNum,
+        },
+      });
+      setAllMovies(response.data.results);
+      setTotalPages(response.data.total_pages);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getTrendingMovies();
     getTrendingSeries();
@@ -98,6 +118,11 @@ export const DataProvider = ({ children }) => {
         results,
         hasSearched,
         setHasSearched,
+        getAllMovies,
+        allMovies,
+        totalPages,
+        setTotalPages,
+        isLoading,
       }}
     >
       {children}

@@ -7,6 +7,7 @@ import Error from './Error';
 import Episodes from './Episodes';
 import Contact from './Contact';
 import Search from './Search';
+import AllMovies from './AllMovies';
 
 export {
   Login,
@@ -17,5 +18,6 @@ export {
   Episodes,
   Contact,
   Search,
+  AllMovies,
   Error,
 };
