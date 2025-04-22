@@ -8,6 +8,7 @@ import Episodes from './Episodes';
 import Contact from './Contact';
 import Search from './Search';
 import AllMovies from './AllMovies';
+import AllSeries from './AllSeries';
 
 export {
   Login,
@@ -19,5 +20,6 @@ export {
   Contact,
   Search,
   AllMovies,
+  AllSeries,
   Error,
 };

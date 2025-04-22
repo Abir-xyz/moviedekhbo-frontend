@@ -7,8 +7,8 @@ import { Link } from 'react-router';
 import { GrFormPreviousLink } from 'react-icons/gr';
 import { GrFormNextLink } from 'react-icons/gr';
 
-const AllMovies = () => {
-  const { getAllMovies, allMovies, totalPages, isLoading } = useDataContext();
+const AllSeries = () => {
+  const { getAllSeries, allSeries, totalPages, isLoading } = useDataContext();
   const [page, setPage] = useState(1);
 
   const moviePosterURL = `https://image.tmdb.org/t/p/w500`;
@@ -21,8 +21,12 @@ const AllMovies = () => {
     if (page > 1) setPage((prev) => prev - 1);
   };
 
+  {
+    allSeries && console.log(allSeries);
+  }
+
   useEffect(() => {
-    getAllMovies(page);
+    getAllSeries(page);
   }, [page]);
 
   return (
@@ -32,12 +36,12 @@ const AllMovies = () => {
           <Navbar />
         </div>
         <div className='content-container'>
-          {allMovies &&
-            allMovies.map((movie) => {
-              const { poster_path, title, release_date, vote_average, id } =
+          {allSeries &&
+            allSeries.map((movie) => {
+              const { poster_path, name, first_air_date, vote_average, id } =
                 movie;
               return (
-                <Link to={`/movie/${id}`} className='link' key={id}>
+                <Link to={`/tv/${id}`} className='link' key={id}>
                   <div className='movie-info-wrapper'>
                     <div className='wrapper'>
                       <div className='img-container'>
@@ -47,8 +51,8 @@ const AllMovies = () => {
                         />
                         <div className='flow-container'>
                           <p className='date'>
-                            {release_date
-                              ? new Date(movie.release_date)
+                            {first_air_date
+                              ? new Date(movie.first_air_date)
                                   .getFullYear()
                                   .toString()
                               : 'N/A'}
@@ -63,7 +67,7 @@ const AllMovies = () => {
                           </p>
                         </div>
                         <div className='info-container'>
-                          <p className='title'>{title}</p>
+                          <p className='title'>{name}</p>
                         </div>
                       </div>
                     </div>
@@ -216,4 +220,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default AllMovies;
+export default AllSeries;

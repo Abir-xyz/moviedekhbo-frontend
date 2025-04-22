@@ -11,6 +11,7 @@ import {
   Error,
   Search,
   AllMovies,
+  AllSeries,
 } from './pages/index';
 import { Footer } from './components';
 
@@ -33,7 +34,8 @@ const App = () => {
         <Route path='/tv/:id/season/:number' element={<Episodes />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/search' element={<Search />} />
-        <Route path='allmovies' element={<AllMovies />} />
+        <Route path='/allmovies' element={<AllMovies />} />
+        <Route path='/allseries' element={<AllSeries />} />
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
