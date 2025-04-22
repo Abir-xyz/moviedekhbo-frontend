@@ -58,7 +58,7 @@ const EpList = ({ id, number, setEpNum }) => {
                       <span className='icon'>
                         <MdOutlineMovie />
                       </span>
-                      <span>
+                      <span className='txt'>
                         Episode {item.episode_number}.{item.name}
                       </span>
                     </button>
@@ -111,7 +111,7 @@ const Wrapper = styled.section`
     background: none;
     border: none;
     color: #b19c70;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -119,6 +119,13 @@ const Wrapper = styled.section`
 
   .icon {
     margin-right: 5px;
+    font-size: 2rem;
+  }
+
+  .txt {
+    text-align: left;
+    font-size: 1.1rem;
+    margin-left: 5px;
   }
 
   @media screen and (min-width: 800px) {
