@@ -171,6 +171,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     gap: 2px;
     text-align: center;
+    /* padding: 6px 12px; */
     .icon {
       font-size: 1.1rem;
       margin-top: 5px;

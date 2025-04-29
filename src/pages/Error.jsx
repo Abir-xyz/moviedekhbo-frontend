@@ -28,7 +28,7 @@ const Wrapper = styled.section`
     width: 100%;
     height: 600px;
   }
-  p{
+  p {
     text-align: center;
     padding-top: 3rem;
     font-size: 1.1rem;

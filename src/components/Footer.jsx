@@ -17,6 +17,9 @@ const Footer = () => {
             If you want to say something then <Link to='/contact'>Contact</Link>
           </p>
           <p>Copyright © {currentYear} MovieDekhbo</p>
+          <p className='redirect'>
+            Crafted by <Link to='https://abir.netlify.app/' target='_0' >Abir</Link> :)
+          </p>
         </div>
       </div>
     </Wrapper>
@@ -30,6 +33,10 @@ const Wrapper = styled.section`
     background-color: #000000;
     color: #7a7a7a;
     padding: 12px 0;
+  }
+
+  .redirect a {
+    color: #d4d4d4 !important;
   }
 
   .wrapper {

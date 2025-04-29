@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
   }
 
   if (!isAuthenticated || !user) {
-    return <Navigate to='/login' />;
+    return <Navigate to='/warning' />;
   }
 
   return children;

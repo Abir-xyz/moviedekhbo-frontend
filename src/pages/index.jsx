@@ -9,6 +9,8 @@ import Contact from './Contact';
 import Search from './Search';
 import AllMovies from './AllMovies';
 import AllSeries from './AllSeries';
+import Warning from './Warning';
+import Watchlist from './Watchlist';
 
 export {
   Login,
@@ -22,4 +24,6 @@ export {
   AllMovies,
   AllSeries,
   Error,
+  Warning,
+  Watchlist,
 };

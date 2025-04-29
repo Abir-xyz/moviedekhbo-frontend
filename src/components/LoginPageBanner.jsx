@@ -28,14 +28,14 @@ const Wrapper = styled.section`
     border: #fff !important;
     font-size: 1.1rem;
     color: #000;
-    padding: 10px 26px;
+    padding: 5px 20px;
     cursor: pointer;
     border-radius: 10rem;
     transition: all 0.1s ease-in-out;
   }
 
   .started-btn button:hover {
-    background-color: #c0c0c0;
+    background-color: var(--accentClr);
     color: #fff;
   }
 
