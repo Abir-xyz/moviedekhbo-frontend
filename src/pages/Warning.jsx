@@ -31,9 +31,9 @@ const Wrapper = styled.section`
   h1 {
     font-weight: 400;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
   a {
-    margin-top: 1rem;
     color: grey;
   }
   .link:hover {
