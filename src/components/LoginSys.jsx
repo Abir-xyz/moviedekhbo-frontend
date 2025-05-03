@@ -22,7 +22,9 @@ const LoginSys = () => {
         ) : (
           <>
             <button
-              onClick={() => logout({ returnTo: window.location.origin })}
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
             >
               <span className='icon'>
                 <RiAccountCircleLine />
