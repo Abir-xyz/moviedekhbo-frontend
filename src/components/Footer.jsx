@@ -41,7 +41,6 @@ const Wrapper = styled.section`
     text-align: center;
     p {
       padding-bottom: 4px;
-      max-width: 56vw;
     }
   }
 
@@ -49,9 +48,6 @@ const Wrapper = styled.section`
     .wrapper {
       margin-bottom: 5px;
       font-size: 0.9rem;
-    }
-    p {
-      max-width: 100vw;
     }
   }
 `;
