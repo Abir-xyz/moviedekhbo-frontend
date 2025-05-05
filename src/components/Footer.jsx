@@ -9,17 +9,14 @@ const Footer = () => {
       <div className='main'>
         <div className='wrapper'>
           <p>
-            This website is intended for educational and informational purposes
-            only!
+            This site does not host any files. All content is provided by third
+            parties.
           </p>
-          <p>All contents are provided by non-affiliated third parties.</p>
-          <p>
+          {/* <p>All contents are provided by non-affiliated third parties.</p> */}
+          {/* <p>
             If you want to say something then <Link to='/contact'>Contact</Link>
-          </p>
+          </p> */}
           <p>Copyright © {currentYear} MovieDekhbo</p>
-          <p className='redirect'>
-            Crafted by <Link to='https://abir.netlify.app/' target='_0' >Abir</Link> :)
-          </p>
         </div>
       </div>
     </Wrapper>
@@ -28,15 +25,11 @@ const Footer = () => {
 
 const Wrapper = styled.section`
   .main {
-    min-height: 20vh;
+    min-height: 16vh;
     margin-top: 4rem;
     background-color: #000000;
     color: #7a7a7a;
     padding: 12px 0;
-  }
-
-  .redirect a {
-    color: #d4d4d4 !important;
   }
 
   .wrapper {
@@ -44,10 +37,11 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: end;
-    min-height: 20vh;
+    min-height: 16vh;
     text-align: center;
     p {
       padding-bottom: 4px;
+      max-width: 56vw;
     }
   }
 
@@ -55,6 +49,9 @@ const Wrapper = styled.section`
     .wrapper {
       margin-bottom: 5px;
       font-size: 0.9rem;
+    }
+    p {
+      max-width: 100vw;
     }
   }
 `;
