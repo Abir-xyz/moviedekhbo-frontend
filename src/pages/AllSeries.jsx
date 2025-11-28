@@ -21,10 +21,6 @@ const AllSeries = () => {
     if (page > 1) setPage((prev) => prev - 1);
   };
 
-  {
-    allSeries && console.log(allSeries);
-  }
-
   useEffect(() => {
     getAllSeries(page);
   }, [page]);

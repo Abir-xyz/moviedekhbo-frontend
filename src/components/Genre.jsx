@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 import { CiHeart } from 'react-icons/ci';
+import { useDataContext } from '../context api/DataContext';
+import { useParams } from 'react-router';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Genre = ({ data }) => {
-  const { genres } = data;
+  const { genres, number_of_seasons } = data;
+  const { addToWatchList } = useDataContext();
+  const { id } = useParams();
+  const { user } = useAuth0();
+  const type = number_of_seasons ? 'tv' : 'movie';
+
+  console.log(number_of_seasons);
+  
 
   return (
     <Wrapper className='section'>
@@ -21,7 +31,7 @@ const Genre = ({ data }) => {
           )}
         </div>
         <div className='watchList-wrapper'>
-          <button>
+          <button onClick={() => addToWatchList(user.email, id, type)}>
             <CiHeart />
           </button>
         </div>

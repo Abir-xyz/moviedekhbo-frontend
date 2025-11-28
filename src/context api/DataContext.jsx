@@ -1,11 +1,15 @@
 import { createContext, useContext } from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const DataContext = createContext();
 
 const rootURL = `https://api.themoviedb.org/3`;
 const key = import.meta.env.VITE_API_KEY;
+const watchListApi = axios.create({
+  baseURL: 'http://localhost:5000/api/watchlist',
+});
 
 export const DataProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -18,6 +22,12 @@ export const DataProvider = ({ children }) => {
   const [allMovies, setAllMovies] = useState('');
   const [totalPages, setTotalPages] = useState(null);
   const [allSeries, setAllSeries] = useState('');
+  const [userWatchList, setUserWatchList] = useState('');
+  const [watchlist, setWatchlist] = useState([]);
+  const [wListItems, setWListItems] = useState('');
+  const { user } = useAuth0();
+
+  const userWatchListApi = `http://localhost:5000/api/watchlist/${user?.email}`;
 
   // get trendingMovies
   const getTrendingMovies = async () => {
@@ -83,6 +93,36 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const fetchWatchlist = async () => {
+      try {
+        const res = await fetch(userWatchListApi);
+        const data = await res.json();
+        const watchlistItems = data.map((item) => ({
+          id: item.itemId,
+          type: item.type,
+        }));
+        setWatchlist(watchlistItems);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    if (user) fetchWatchlist();
+  }, [user]);
+
+  const getUserWatchList = async (value) => {
+    try {
+      const response = await axios(
+        `${rootURL}/search/multi?api_key=${key}&query=${value}`
+      );
+      const data = response.data;
+      setUserWatchList(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // get all movies
   const getAllMovies = async (pageNum) => {
     setIsLoading(true);
@@ -119,11 +159,54 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  // btn to add to watchlist
+  const addToWatchList = async (userId, itemId, type) => {
+    try {
+      const res = await watchListApi.post('/', { userId, itemId, type });
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // fetch watchlist items to watchlist page
+  const fetchWatchlistItem = async ({ id, type }) => {
+    try {
+      const res = await axios(`${rootURL}/${type}/${id}?api_key=${key}`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const watchListResult = async () => {
+    try {
+      if (!watchlist || watchlist.length === 0) return;
+
+      const listItems = await Promise.all(
+        watchlist.map((item) => fetchWatchlistItem(item))
+      );
+      setWListItems(listItems);
+      console.log('Watchlist data:', listItems);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (watchlist.length > 0) {
+      watchListResult();
+    }
+  }, [watchlist]);
+
   useEffect(() => {
     getTrendingMovies();
     getTrendingSeries();
     getTopMovies();
     getTopSeries();
+    // addToWatchList();
+    getUserWatchList();
   }, []);
 
   return (
@@ -144,6 +227,11 @@ export const DataProvider = ({ children }) => {
         isLoading,
         getAllSeries,
         allSeries,
+        addToWatchList,
+        setUserWatchList,
+        userWatchList,
+        watchlist,
+        wListItems,
       }}
     >
       {children}
